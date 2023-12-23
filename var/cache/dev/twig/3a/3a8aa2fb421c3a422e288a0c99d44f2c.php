@@ -87,8 +87,17 @@ class __TwigTemplate_87f72f72c8775cfcc8ec4af2419aafbf extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        echo "\t<h1>Coucou</h1>
-\t<p>paragraphe</p>
+        echo "\t<div class=\"container mt-4\">
+\t\t<div class=\"jumbotron\">
+\t\t\t<h1 class=\"display-4\">bicarboNat</h1>
+\t\t\t<p class=\"lead\">Une application de recettes et de cuisine</p>
+\t\t\t<hr class=\"my-4\">
+\t\t\t<p>Pour commencer, rendez-vous sur la page d'inscription</p>
+\t\t\t<p class=\"lead\">
+\t\t\t\t<a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Inscription</a>
+\t\t\t</p>
+\t\t</div>
+\t</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -131,8 +140,17 @@ class __TwigTemplate_87f72f72c8775cfcc8ec4af2419aafbf extends Template
 {% endblock %}
 
 {% block body %}
-\t<h1>Coucou</h1>
-\t<p>paragraphe</p>
+\t<div class=\"container mt-4\">
+\t\t<div class=\"jumbotron\">
+\t\t\t<h1 class=\"display-4\">bicarboNat</h1>
+\t\t\t<p class=\"lead\">Une application de recettes et de cuisine</p>
+\t\t\t<hr class=\"my-4\">
+\t\t\t<p>Pour commencer, rendez-vous sur la page d'inscription</p>
+\t\t\t<p class=\"lead\">
+\t\t\t\t<a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Inscription</a>
+\t\t\t</p>
+\t\t</div>
+\t</div>
 {% endblock %}
 ", "home.html.twig", "/Users/romaincrispini/Desktop/Symfony/bicarboNat/templates/home.html.twig");
     }

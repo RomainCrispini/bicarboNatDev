@@ -30,6 +30,7 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
+            'header' => [$this, 'block_header'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -60,18 +61,21 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
         // line 13
         echo "\t\t";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
+        // line 19
         echo "
 \t\t";
-        // line 18
+        // line 20
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 21
+        // line 23
         echo "\t</head>
 \t<body>
 \t\t";
-        // line 23
+        // line 25
+        $this->displayBlock('header', $context, $blocks);
+        // line 28
+        echo "\t\t";
         $this->displayBlock('body', $context, $blocks);
-        // line 24
+        // line 29
         echo "\t</body>
 </html>
 ";
@@ -117,7 +121,10 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
         // line 14
         echo "\t\t\t";
         // line 15
-        echo "\t\t\t";
+        echo "\t\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/darkly/bootstrap.min.css\"/>
+\t\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/darkly/_variables.scss\"/>
+\t\t\t";
+        // line 17
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
 \t\t";
@@ -129,7 +136,7 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
 
     }
 
-    // line 18
+    // line 20
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -139,7 +146,7 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 19
+        // line 21
         echo "\t\t\t";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -152,7 +159,30 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
 
     }
 
-    // line 23
+    // line 25
+    public function block_header($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
+
+        // line 26
+        echo "\t\t\t";
+        $this->loadTemplate("partials/_header.html.twig", "base.html.twig", 26)->display($context);
+        // line 27
+        echo "\t\t";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 28
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -183,7 +213,7 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
      */
     public function getDebugInfo()
     {
-        return array (  156 => 23,  143 => 19,  133 => 18,  120 => 15,  118 => 14,  108 => 13,  97 => 7,  87 => 6,  75 => 24,  73 => 23,  69 => 21,  67 => 18,  64 => 17,  61 => 13,  56 => 9,  54 => 6,  47 => 1,);
+        return array (  186 => 28,  176 => 27,  173 => 26,  163 => 25,  150 => 21,  140 => 20,  128 => 17,  124 => 15,  122 => 14,  112 => 13,  101 => 7,  91 => 6,  79 => 29,  76 => 28,  74 => 25,  70 => 23,  68 => 20,  65 => 19,  62 => 13,  57 => 9,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -202,6 +232,8 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
 \t\t{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 \t\t{% block stylesheets %}
 \t\t\t{# {{ ux_controller_link_tags() }} #}
+\t\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/darkly/bootstrap.min.css\"/>
+\t\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/darkly/_variables.scss\"/>
 \t\t\t{{ encore_entry_link_tags('app') }}
 \t\t{% endblock %}
 
@@ -210,6 +242,9 @@ class __TwigTemplate_e676fef4fa2e1db7b93b3001036f1f4c extends Template
 \t\t{% endblock %}
 \t</head>
 \t<body>
+\t\t{% block header %}
+\t\t\t{% include \"partials/_header.html.twig\" %}
+\t\t{% endblock %}
 \t\t{% block body %}{% endblock %}
 \t</body>
 </html>
