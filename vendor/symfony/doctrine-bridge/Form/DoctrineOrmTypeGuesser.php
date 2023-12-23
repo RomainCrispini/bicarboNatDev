@@ -12,6 +12,7 @@
 namespace Symfony\Bridge\Doctrine\Form;
 
 use Doctrine\DBAL\Types\Types;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 use Doctrine\ORM\Mapping\MappingException as LegacyMappingException;
 use Doctrine\Persistence\ManagerRegistry;
@@ -44,9 +45,6 @@ class DoctrineOrmTypeGuesser implements FormTypeGuesserInterface
         $this->registry = $registry;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function guessType(string $class, string $property): ?TypeGuess
     {
         if (!$ret = $this->getMetadata($class)) {
@@ -63,7 +61,7 @@ class DoctrineOrmTypeGuesser implements FormTypeGuesserInterface
         }
 
         return match ($metadata->getTypeOfField($property)) {
-            Types::ARRAY,
+            'array', // DBAL < 4
             Types::SIMPLE_ARRAY => new TypeGuess(CollectionType::class, [], Guess::MEDIUM_CONFIDENCE),
             Types::BOOLEAN => new TypeGuess(CheckboxType::class, [], Guess::HIGH_CONFIDENCE),
             Types::DATETIME_MUTABLE,
@@ -87,9 +85,6 @@ class DoctrineOrmTypeGuesser implements FormTypeGuesserInterface
         };
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function guessRequired(string $class, string $property): ?ValueGuess
     {
         $classMetadatas = $this->getMetadata($class);
@@ -127,9 +122,6 @@ class DoctrineOrmTypeGuesser implements FormTypeGuesserInterface
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function guessMaxLength(string $class, string $property): ?ValueGuess
     {
         $ret = $this->getMetadata($class);
@@ -148,9 +140,6 @@ class DoctrineOrmTypeGuesser implements FormTypeGuesserInterface
         return null;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function guessPattern(string $class, string $property): ?ValueGuess
     {
         $ret = $this->getMetadata($class);
@@ -163,6 +152,13 @@ class DoctrineOrmTypeGuesser implements FormTypeGuesserInterface
         return null;
     }
 
+    /**
+     * @template T of object
+     *
+     * @param class-string<T> $class
+     *
+     * @return array{0:ClassMetadata<T>, 1:string}|null
+     */
     protected function getMetadata(string $class)
     {
         // normalize class name

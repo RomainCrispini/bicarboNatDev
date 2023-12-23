@@ -38,6 +38,8 @@ abstract class AbstractDoctrineExtension extends Extension
     /**
      * @param array $objectManager A configured object manager
      *
+     * @return void
+     *
      * @throws \InvalidArgumentException
      */
     protected function loadMappingInformation(array $objectManager, ContainerBuilder $container)
@@ -105,6 +107,8 @@ abstract class AbstractDoctrineExtension extends Extension
      * Register the alias for this mapping driver.
      *
      * Aliases can be used in the Query languages of all the Doctrine object managers to simplify writing tasks.
+     *
+     * @return void
      */
     protected function setMappingDriverAlias(array $mappingConfig, string $mappingName)
     {
@@ -117,6 +121,8 @@ abstract class AbstractDoctrineExtension extends Extension
 
     /**
      * Register the mapping driver configuration for later use with the object managers metadata driver chain.
+     *
+     * @return void
      *
      * @throws \InvalidArgumentException
      */
@@ -172,6 +178,8 @@ abstract class AbstractDoctrineExtension extends Extension
 
     /**
      * Register all the collected mapping information with the object manager by registering the appropriate mapping drivers.
+     *
+     * @return void
      */
     protected function registerMappingDrivers(array $objectManager, ContainerBuilder $container)
     {
@@ -180,7 +188,6 @@ abstract class AbstractDoctrineExtension extends Extension
             $chainDriverDef = $container->getDefinition($this->getObjectManagerElementName($objectManager['name'].'_metadata_driver'));
         } else {
             $chainDriverDef = new Definition($this->getMetadataDriverClass('driver_chain'));
-            $chainDriverDef->setPublic(false);
         }
 
         foreach ($this->drivers as $driverType => $driverPaths) {
@@ -208,7 +215,6 @@ abstract class AbstractDoctrineExtension extends Extension
                     array_values($driverPaths),
                 ]);
             }
-            $mappingDriverDef->setPublic(false);
             if (str_contains($mappingDriverDef->getClass(), 'yml') || str_contains($mappingDriverDef->getClass(), 'xml')) {
                 $mappingDriverDef->setArguments([array_flip($driverPaths)]);
                 $mappingDriverDef->addMethodCall('setGlobalBasename', ['mapping']);
@@ -226,6 +232,8 @@ abstract class AbstractDoctrineExtension extends Extension
 
     /**
      * Assertion if the specified mapping information is valid.
+     *
+     * @return void
      *
      * @throws \InvalidArgumentException
      */
@@ -295,14 +303,14 @@ abstract class AbstractDoctrineExtension extends Extension
             $content = file_get_contents($file);
 
             if (
-                preg_match('/^#\[.*'.$quotedMappingObjectName.'\b/m', $content) ||
-                preg_match('/^#\[.*Embeddable\b/m', $content)
+                preg_match('/^#\[.*'.$quotedMappingObjectName.'\b/m', $content)
+                || preg_match('/^#\[.*Embeddable\b/m', $content)
             ) {
                 break;
             }
             if (
-                preg_match('/^(?: \*|\/\*\*) @.*'.$quotedMappingObjectName.'\b/m', $content) ||
-                preg_match('/^(?: \*|\/\*\*) @.*Embeddable\b/m', $content)
+                preg_match('/^(?: \*|\/\*\*) @.*'.$quotedMappingObjectName.'\b/m', $content)
+                || preg_match('/^(?: \*|\/\*\*) @.*Embeddable\b/m', $content)
             ) {
                 $type = 'annotation';
                 break;
@@ -314,6 +322,8 @@ abstract class AbstractDoctrineExtension extends Extension
 
     /**
      * Loads a configured object manager metadata, query or result cache driver.
+     *
+     * @return void
      *
      * @throws \InvalidArgumentException in case of unknown driver type
      */
@@ -373,8 +383,6 @@ abstract class AbstractDoctrineExtension extends Extension
             default:
                 throw new \InvalidArgumentException(sprintf('"%s" is an unrecognized Doctrine cache driver.', $cacheDriver['type']));
         }
-
-        $cacheDef->setPublic(false);
 
         if (!isset($cacheDriver['namespace'])) {
             // generate a unique namespace for the given application

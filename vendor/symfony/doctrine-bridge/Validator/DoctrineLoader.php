@@ -12,7 +12,7 @@
 namespace Symfony\Bridge\Doctrine\Validator;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\Mapping\ClassMetadataInfo;
+use Doctrine\ORM\Mapping\ClassMetadata as OrmClassMetadata;
 use Doctrine\ORM\Mapping\MappingException as OrmMappingException;
 use Doctrine\Persistence\Mapping\MappingException;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -33,18 +33,12 @@ final class DoctrineLoader implements LoaderInterface
 {
     use AutoMappingTrait;
 
-    private EntityManagerInterface $entityManager;
-    private ?string $classValidatorRegexp;
-
-    public function __construct(EntityManagerInterface $entityManager, string $classValidatorRegexp = null)
-    {
-        $this->entityManager = $entityManager;
-        $this->classValidatorRegexp = $classValidatorRegexp;
+    public function __construct(
+        private readonly EntityManagerInterface $entityManager,
+        private readonly ?string $classValidatorRegexp = null,
+    ) {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function loadClassMetadata(ClassMetadata $metadata): bool
     {
         $className = $metadata->getClassName();
@@ -54,7 +48,7 @@ final class DoctrineLoader implements LoaderInterface
             return false;
         }
 
-        if (!$doctrineMetadata instanceof ClassMetadataInfo) {
+        if (!$doctrineMetadata instanceof OrmClassMetadata) {
             return false;
         }
 
@@ -108,7 +102,7 @@ final class DoctrineLoader implements LoaderInterface
                 if (isset($mapping['originalClass']) && !str_contains($mapping['declaredField'], '.')) {
                     $metadata->addPropertyConstraint($mapping['declaredField'], new Valid());
                     $loaded = true;
-                } elseif (property_exists($className, $mapping['fieldName'])) {
+                } elseif (property_exists($className, $mapping['fieldName']) && (!$doctrineMetadata->isMappedSuperclass || $metadata->getReflectionClass()->getProperty($mapping['fieldName'])->isPrivate())) {
                     $metadata->addPropertyConstraint($mapping['fieldName'], new Length(['max' => $mapping['length']]));
                     $loaded = true;
                 }

@@ -26,11 +26,11 @@ use Symfony\Component\Dotenv\Dotenv;
  * @internal
  */
 #[Autoconfigure(bind: ['$projectDir' => '%kernel.project_dir%', '$defaultEnv' => '%kernel.environment%'])]
-#[AsCommand(name: 'dotenv:dump', description: 'Compiles .env files to .env.local.php')]
+#[AsCommand(name: 'dotenv:dump', description: 'Compile .env files to .env.local.php')]
 final class DotenvDumpCommand extends Command
 {
     private string $projectDir;
-    private string|null $defaultEnv;
+    private ?string $defaultEnv;
 
     public function __construct(string $projectDir, string $defaultEnv = null)
     {
@@ -40,10 +40,7 @@ final class DotenvDumpCommand extends Command
         parent::__construct();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setDefinition([
@@ -59,9 +56,6 @@ EOT
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $config = [];
