@@ -95,15 +95,39 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
             echo "
 \t\t\t<h1>Mes ingrédients</h1>
 
+\t\t\t<a href=\"";
+            // line 13
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ingredient.new");
+            echo "\" class=\"btn btn-primary\">Ajouter un ingrédient</a>
+
 \t\t\t<div class=\"count\">
 \t\t\t\t<small>
 \t\t\t\t\t";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 15, $this->source); })()), "getTotalItemCount", [], "any", false, false, false, 15), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 17, $this->source); })()), "getTotalItemCount", [], "any", false, false, false, 17), "html", null, true);
             echo "
 \t\t\t\t\tingrédients</small>
 \t\t\t</div>
 
+\t\t\t";
+            // line 21
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "flashes", ["success"], "method", false, false, false, 21));
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 22
+                echo "\t\t\t\t<div class=\"alert alert-success mt-4\">
+\t\t\t\t\t";
+                // line 23
+                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                echo "
+\t\t\t\t</div>
+\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 26
+            echo "
 \t\t\t<table class=\"table table-primary mt-4\">
 \t\t\t\t<thead>
 \t\t\t\t\t<tr>
@@ -115,31 +139,31 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
 \t\t\t\t</thead>
 \t\t\t\t<tbody>
 \t\t\t\t\t";
-            // line 29
+            // line 37
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 29, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 37, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["ingredient"]) {
-                // line 30
+                // line 38
                 echo "\t\t\t\t\t\t<tr class=\"table-primary\">
 \t\t\t\t\t\t\t<th scope=\"row\">";
-                // line 31
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "id", [], "any", false, false, false, 31), "html", null, true);
+                // line 39
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "id", [], "any", false, false, false, 39), "html", null, true);
                 echo "</th>
 \t\t\t\t\t\t\t<td>";
-                // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "name", [], "any", false, false, false, 32), "html", null, true);
+                // line 40
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "name", [], "any", false, false, false, 40), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "price", [], "any", false, false, false, 33), "html", null, true);
+                // line 41
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "price", [], "any", false, false, false, 41), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 34
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 34), "d/m/Y"), "html", null, true);
+                // line 42
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 42), "d/m/Y"), "html", null, true);
                 echo "
 \t\t\t\t\t\t\t\t(";
-                // line 35
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 35), "H:i:s"), "html", null, true);
+                // line 43
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 43), "H:i:s"), "html", null, true);
                 echo ")</td>
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t";
@@ -147,24 +171,25 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ingredient'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 38
+            // line 46
             echo "
 \t\t\t\t</tbody>
 \t\t\t</table>
 
-\t\t\t<div class=\"navigation d-flex justify-content-center mt-4\">
+\t\t\t<div class=\"d-flex justify-content-center mt-4\">
 \t\t\t\t";
-            // line 43
-            echo $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 43, $this->source); })()));
+            // line 51
+            echo $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 51, $this->source); })()));
             echo "
 \t\t\t</div>
+
 \t\t";
         } else {
-            // line 46
+            // line 55
             echo "\t\t\t<h4>Il n'y a pas d'ingrédients</h4>
 \t\t";
         }
-        // line 48
+        // line 57
         echo "\t</div>
 
 ";
@@ -197,7 +222,7 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  168 => 48,  164 => 46,  158 => 43,  151 => 38,  142 => 35,  138 => 34,  134 => 33,  130 => 32,  126 => 31,  123 => 30,  119 => 29,  102 => 15,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  193 => 57,  189 => 55,  182 => 51,  175 => 46,  166 => 43,  162 => 42,  158 => 41,  154 => 40,  150 => 39,  147 => 38,  143 => 37,  130 => 26,  121 => 23,  118 => 22,  114 => 21,  107 => 17,  100 => 13,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -214,11 +239,19 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
 
 \t\t\t<h1>Mes ingrédients</h1>
 
+\t\t\t<a href=\"{{ path('ingredient.new') }}\" class=\"btn btn-primary\">Ajouter un ingrédient</a>
+
 \t\t\t<div class=\"count\">
 \t\t\t\t<small>
 \t\t\t\t\t{{ ingredients.getTotalItemCount }}
 \t\t\t\t\tingrédients</small>
 \t\t\t</div>
+
+\t\t\t{% for message in app.flashes('success') %}
+\t\t\t\t<div class=\"alert alert-success mt-4\">
+\t\t\t\t\t{{ message }}
+\t\t\t\t</div>
+\t\t\t{% endfor %}
 
 \t\t\t<table class=\"table table-primary mt-4\">
 \t\t\t\t<thead>
@@ -243,9 +276,10 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
 \t\t\t\t</tbody>
 \t\t\t</table>
 
-\t\t\t<div class=\"navigation d-flex justify-content-center mt-4\">
+\t\t\t<div class=\"d-flex justify-content-center mt-4\">
 \t\t\t\t{{ knp_pagination_render(ingredients) }}
 \t\t\t</div>
+
 \t\t{% else %}
 \t\t\t<h4>Il n'y a pas d'ingrédients</h4>
 \t\t{% endif %}

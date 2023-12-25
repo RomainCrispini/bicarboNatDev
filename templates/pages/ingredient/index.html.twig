@@ -10,11 +10,19 @@
 
 			<h1>Mes ingrédients</h1>
 
+			<a href="{{ path('ingredient.new') }}" class="btn btn-primary">Ajouter un ingrédient</a>
+
 			<div class="count">
 				<small>
 					{{ ingredients.getTotalItemCount }}
 					ingrédients</small>
 			</div>
+
+			{% for message in app.flashes('success') %}
+				<div class="alert alert-success mt-4">
+					{{ message }}
+				</div>
+			{% endfor %}
 
 			<table class="table table-primary mt-4">
 				<thead>
@@ -39,9 +47,10 @@
 				</tbody>
 			</table>
 
-			<div class="navigation d-flex justify-content-center mt-4">
+			<div class="d-flex justify-content-center mt-4">
 				{{ knp_pagination_render(ingredients) }}
 			</div>
+
 		{% else %}
 			<h4>Il n'y a pas d'ingrédients</h4>
 		{% endif %}
