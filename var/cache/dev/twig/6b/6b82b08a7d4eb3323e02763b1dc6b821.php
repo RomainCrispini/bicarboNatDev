@@ -69,7 +69,7 @@ class __TwigTemplate_2980f7221633704ffc66303fe1915d8e extends Template
         $this->displayBlock('javascripts', $context, $blocks);
         // line 26
         echo "\t</head>
-\t<body style=\"background-color: #333\">
+\t<body style=\"background-color: #3F3F3F\">
 \t\t";
         // line 28
         $this->displayBlock('header', $context, $blocks);
@@ -272,7 +272,7 @@ class __TwigTemplate_2980f7221633704ffc66303fe1915d8e extends Template
 \t\t\t{{ encore_entry_script_tags('app') }}
 \t\t{% endblock %}
 \t</head>
-\t<body style=\"background-color: #333\">
+\t<body style=\"background-color: #3F3F3F\">
 \t\t{% block header %}
 \t\t\t{% include \"partials/_header.html.twig\" %}
 \t\t{% endblock %}

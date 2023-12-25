@@ -55,7 +55,7 @@ class __TwigTemplate_9e45895256b75229ee79220f6c91a623 extends Template
 
     }
 
-    // line 3
+    // line 4
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -65,7 +65,7 @@ class __TwigTemplate_9e45895256b75229ee79220f6c91a623 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        // line 4
+        // line 5
         echo "\tbicarboNat - Accueil
 ";
         
@@ -76,7 +76,7 @@ class __TwigTemplate_9e45895256b75229ee79220f6c91a623 extends Template
 
     }
 
-    // line 7
+    // line 8
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -86,7 +86,7 @@ class __TwigTemplate_9e45895256b75229ee79220f6c91a623 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 8
+        // line 9
         echo "\t<div class=\"container mt-4\">
 \t\t<div class=\"jumbotron\">
 \t\t\t<h1 class=\"display-4\">bicarboNat</h1>
@@ -98,6 +98,8 @@ class __TwigTemplate_9e45895256b75229ee79220f6c91a623 extends Template
 \t\t\t</p>
 \t\t</div>
 \t</div>
+
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -128,12 +130,13 @@ class __TwigTemplate_9e45895256b75229ee79220f6c91a623 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  90 => 9,  80 => 8,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"base.html.twig\" %}
+
 
 {% block title %}
 \tbicarboNat - Accueil
@@ -151,6 +154,8 @@ class __TwigTemplate_9e45895256b75229ee79220f6c91a623 extends Template
 \t\t\t</p>
 \t\t</div>
 \t</div>
+
+
 {% endblock %}
 ", "home.html.twig", "/Users/romaincrispini/Desktop/Symfony/bicarboNat/templates/home.html.twig");
     }
