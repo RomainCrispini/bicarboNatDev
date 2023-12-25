@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Ingredient;
 use App\Repository\IngredientRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class IngredientController extends AbstractController
 {
-    #[Route('/ingredient', name: 'app_ingredient')]
+    #[Route('/ingredient', name: 'app_ingredient', methods: ['GET'])]
     public function index(IngredientRepository $repo, PaginatorInterface $paginator, Request $request): Response
     {
         $ingredients = $paginator->paginate(

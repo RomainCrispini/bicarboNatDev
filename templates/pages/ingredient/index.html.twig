@@ -6,41 +6,45 @@
 
 {% block body %}
 	<div class="container mt-4">
-		<h1>Mes ingrédients</h1>
+		{% if not ingredients.items is same as([]) %}
 
-		<div class="count">
-			<small>
-				{{ ingredients.getTotalItemCount }}
-				ingrédients</small>
-		</div>
+			<h1>Mes ingrédients</h1>
 
-		<table class="table table-primary mt-4">
-			<thead>
-				<tr>
-					<th scope="col">Numéro</th>
-					<th scope="col">Nom</th>
-					<th scope="col">Prix</th>
-					<th scope="col">Date de création</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for ingredient in ingredients %}
-					<tr class="table-primary">
-						<th scope="row">{{ ingredient.id }}</th>
-						<td>{{ ingredient.name }}</td>
-						<td>{{ ingredient.price }}</td>
-						<td>{{ ingredient.createdAt| date('d/m/Y') }}
-							({{ ingredient.createdAt| date('H:i:s') }})</td>
+			<div class="count">
+				<small>
+					{{ ingredients.getTotalItemCount }}
+					ingrédients</small>
+			</div>
+
+			<table class="table table-primary mt-4">
+				<thead>
+					<tr>
+						<th scope="col">Numéro</th>
+						<th scope="col">Nom</th>
+						<th scope="col">Prix</th>
+						<th scope="col">Date de création</th>
 					</tr>
-				{% endfor %}
+				</thead>
+				<tbody>
+					{% for ingredient in ingredients %}
+						<tr class="table-primary">
+							<th scope="row">{{ ingredient.id }}</th>
+							<td>{{ ingredient.name }}</td>
+							<td>{{ ingredient.price }}</td>
+							<td>{{ ingredient.createdAt| date('d/m/Y') }}
+								({{ ingredient.createdAt| date('H:i:s') }})</td>
+						</tr>
+					{% endfor %}
 
-			</tbody>
-		</table>
+				</tbody>
+			</table>
 
-		<div class="navigation d-flex justify-content-center mt-4">
-			{{ knp_pagination_render(ingredients) }}
-		</div>
-
+			<div class="navigation d-flex justify-content-center mt-4">
+				{{ knp_pagination_render(ingredients) }}
+			</div>
+		{% else %}
+			<h4>Il n'y a pas d'ingrédients</h4>
+		{% endif %}
 	</div>
 
 {% endblock %}

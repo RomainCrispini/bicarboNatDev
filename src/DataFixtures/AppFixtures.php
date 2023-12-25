@@ -11,15 +11,14 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        for ($i = 1; $i <= 50; $i++) {
+        for ($i = 1; $i <= 100; $i++) {
             $faker = Factory::create('fr_FR');
             $ingredient = new Ingredient();
-            $ingredient->setName($faker->email())
+            $ingredient->setName($faker->name())
                 ->setPrice(mt_rand(0, 100));
             $manager->persist($ingredient);
         }
 
         $manager->flush();
-        echo $faker->email();
     }
 }

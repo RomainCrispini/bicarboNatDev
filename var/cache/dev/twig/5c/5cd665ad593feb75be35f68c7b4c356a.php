@@ -88,73 +88,84 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
 
         // line 8
         echo "\t<div class=\"container mt-4\">
-\t\t<h1>Mes ingrédients</h1>
-
-\t\t<div class=\"count\">
-\t\t\t<small>
-\t\t\t\t";
-        // line 13
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 13, $this->source); })()), "getTotalItemCount", [], "any", false, false, false, 13), "html", null, true);
-        echo "
-\t\t\t\tingrédients</small>
-\t\t</div>
-
-\t\t<table class=\"table table-primary mt-4\">
-\t\t\t<thead>
-\t\t\t\t<tr>
-\t\t\t\t\t<th scope=\"col\">Numéro</th>
-\t\t\t\t\t<th scope=\"col\">Nom</th>
-\t\t\t\t\t<th scope=\"col\">Prix</th>
-\t\t\t\t\t<th scope=\"col\">Date de création</th>
-\t\t\t\t</tr>
-\t\t\t</thead>
-\t\t\t<tbody>
-\t\t\t\t";
-        // line 27
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 27, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["ingredient"]) {
-            // line 28
-            echo "\t\t\t\t\t<tr class=\"table-primary\">
-\t\t\t\t\t\t<th scope=\"row\">";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "id", [], "any", false, false, false, 29), "html", null, true);
-            echo "</th>
-\t\t\t\t\t\t<td>";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "name", [], "any", false, false, false, 30), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "price", [], "any", false, false, false, 31), "html", null, true);
-            echo "</td>
-\t\t\t\t\t\t<td>";
-            // line 32
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 32), "d/m/Y"), "html", null, true);
+\t\t";
+        // line 9
+        if ( !(twig_get_attribute($this->env, $this->source, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 9, $this->source); })()), "items", [], "any", false, false, false, 9) === [])) {
+            // line 10
             echo "
-\t\t\t\t\t\t\t(";
-            // line 33
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 33), "H:i:s"), "html", null, true);
-            echo ")</td>
+\t\t\t<h1>Mes ingrédients</h1>
+
+\t\t\t<div class=\"count\">
+\t\t\t\t<small>
+\t\t\t\t\t";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 15, $this->source); })()), "getTotalItemCount", [], "any", false, false, false, 15), "html", null, true);
+            echo "
+\t\t\t\t\tingrédients</small>
+\t\t\t</div>
+
+\t\t\t<table class=\"table table-primary mt-4\">
+\t\t\t\t<thead>
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<th scope=\"col\">Numéro</th>
+\t\t\t\t\t\t<th scope=\"col\">Nom</th>
+\t\t\t\t\t\t<th scope=\"col\">Prix</th>
+\t\t\t\t\t\t<th scope=\"col\">Date de création</th>
 \t\t\t\t\t</tr>
+\t\t\t\t</thead>
+\t\t\t\t<tbody>
+\t\t\t\t\t";
+            // line 29
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 29, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["ingredient"]) {
+                // line 30
+                echo "\t\t\t\t\t\t<tr class=\"table-primary\">
+\t\t\t\t\t\t\t<th scope=\"row\">";
+                // line 31
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "id", [], "any", false, false, false, 31), "html", null, true);
+                echo "</th>
+\t\t\t\t\t\t\t<td>";
+                // line 32
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "name", [], "any", false, false, false, 32), "html", null, true);
+                echo "</td>
+\t\t\t\t\t\t\t<td>";
+                // line 33
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "price", [], "any", false, false, false, 33), "html", null, true);
+                echo "</td>
+\t\t\t\t\t\t\t<td>";
+                // line 34
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 34), "d/m/Y"), "html", null, true);
+                echo "
+\t\t\t\t\t\t\t\t(";
+                // line 35
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["ingredient"], "createdAt", [], "any", false, false, false, 35), "H:i:s"), "html", null, true);
+                echo ")</td>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ingredient'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 38
+            echo "
+\t\t\t\t</tbody>
+\t\t\t</table>
+
+\t\t\t<div class=\"navigation d-flex justify-content-center mt-4\">
 \t\t\t\t";
+            // line 43
+            echo $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 43, $this->source); })()));
+            echo "
+\t\t\t</div>
+\t\t";
+        } else {
+            // line 46
+            echo "\t\t\t<h4>Il n'y a pas d'ingrédients</h4>
+\t\t";
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['ingredient'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
-        echo "
-\t\t\t</tbody>
-\t\t</table>
-
-\t\t<div class=\"navigation d-flex justify-content-center mt-4\">
-\t\t\t";
-        // line 41
-        echo $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["ingredients"]) || array_key_exists("ingredients", $context) ? $context["ingredients"] : (function () { throw new RuntimeError('Variable "ingredients" does not exist.', 41, $this->source); })()));
-        echo "
-\t\t</div>
-
-\t</div>
+        // line 48
+        echo "\t</div>
 
 ";
         
@@ -186,7 +197,7 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  153 => 41,  146 => 36,  137 => 33,  133 => 32,  129 => 31,  125 => 30,  121 => 29,  118 => 28,  114 => 27,  97 => 13,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  168 => 48,  164 => 46,  158 => 43,  151 => 38,  142 => 35,  138 => 34,  134 => 33,  130 => 32,  126 => 31,  123 => 30,  119 => 29,  102 => 15,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -199,41 +210,45 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
 
 {% block body %}
 \t<div class=\"container mt-4\">
-\t\t<h1>Mes ingrédients</h1>
+\t\t{% if not ingredients.items is same as([]) %}
 
-\t\t<div class=\"count\">
-\t\t\t<small>
-\t\t\t\t{{ ingredients.getTotalItemCount }}
-\t\t\t\tingrédients</small>
-\t\t</div>
+\t\t\t<h1>Mes ingrédients</h1>
 
-\t\t<table class=\"table table-primary mt-4\">
-\t\t\t<thead>
-\t\t\t\t<tr>
-\t\t\t\t\t<th scope=\"col\">Numéro</th>
-\t\t\t\t\t<th scope=\"col\">Nom</th>
-\t\t\t\t\t<th scope=\"col\">Prix</th>
-\t\t\t\t\t<th scope=\"col\">Date de création</th>
-\t\t\t\t</tr>
-\t\t\t</thead>
-\t\t\t<tbody>
-\t\t\t\t{% for ingredient in ingredients %}
-\t\t\t\t\t<tr class=\"table-primary\">
-\t\t\t\t\t\t<th scope=\"row\">{{ ingredient.id }}</th>
-\t\t\t\t\t\t<td>{{ ingredient.name }}</td>
-\t\t\t\t\t\t<td>{{ ingredient.price }}</td>
-\t\t\t\t\t\t<td>{{ ingredient.createdAt| date('d/m/Y') }}
-\t\t\t\t\t\t\t({{ ingredient.createdAt| date('H:i:s') }})</td>
+\t\t\t<div class=\"count\">
+\t\t\t\t<small>
+\t\t\t\t\t{{ ingredients.getTotalItemCount }}
+\t\t\t\t\tingrédients</small>
+\t\t\t</div>
+
+\t\t\t<table class=\"table table-primary mt-4\">
+\t\t\t\t<thead>
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<th scope=\"col\">Numéro</th>
+\t\t\t\t\t\t<th scope=\"col\">Nom</th>
+\t\t\t\t\t\t<th scope=\"col\">Prix</th>
+\t\t\t\t\t\t<th scope=\"col\">Date de création</th>
 \t\t\t\t\t</tr>
-\t\t\t\t{% endfor %}
+\t\t\t\t</thead>
+\t\t\t\t<tbody>
+\t\t\t\t\t{% for ingredient in ingredients %}
+\t\t\t\t\t\t<tr class=\"table-primary\">
+\t\t\t\t\t\t\t<th scope=\"row\">{{ ingredient.id }}</th>
+\t\t\t\t\t\t\t<td>{{ ingredient.name }}</td>
+\t\t\t\t\t\t\t<td>{{ ingredient.price }}</td>
+\t\t\t\t\t\t\t<td>{{ ingredient.createdAt| date('d/m/Y') }}
+\t\t\t\t\t\t\t\t({{ ingredient.createdAt| date('H:i:s') }})</td>
+\t\t\t\t\t\t</tr>
+\t\t\t\t\t{% endfor %}
 
-\t\t\t</tbody>
-\t\t</table>
+\t\t\t\t</tbody>
+\t\t\t</table>
 
-\t\t<div class=\"navigation d-flex justify-content-center mt-4\">
-\t\t\t{{ knp_pagination_render(ingredients) }}
-\t\t</div>
-
+\t\t\t<div class=\"navigation d-flex justify-content-center mt-4\">
+\t\t\t\t{{ knp_pagination_render(ingredients) }}
+\t\t\t</div>
+\t\t{% else %}
+\t\t\t<h4>Il n'y a pas d'ingrédients</h4>
+\t\t{% endif %}
 \t</div>
 
 {% endblock %}
