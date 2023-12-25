@@ -1,3 +1,3 @@
-# <p align="center">Recipies</p>
+# <p align="center">bicarboNat</p>
   
-Comme le titre l'indique !
+Des recettes

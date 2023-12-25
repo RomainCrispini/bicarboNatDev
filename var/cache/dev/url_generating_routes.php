@@ -20,7 +20,11 @@ return [
     'home.index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'ingredient.index' => [[], ['_controller' => 'App\\Controller\\IngredientController::index'], [], [['text', '/ingredient']], [], [], []],
     'ingredient.new' => [[], ['_controller' => 'App\\Controller\\IngredientController::new'], [], [['text', '/ingredient/nouveau']], [], [], []],
+    'ingredient.edit' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/edition']], [], [], []],
+    'ingredient.delete' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/suppression']], [], [], []],
     'App\Controller\HomeController::index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'App\Controller\IngredientController::index' => [[], ['_controller' => 'App\\Controller\\IngredientController::index'], [], [['text', '/ingredient']], [], [], []],
     'App\Controller\IngredientController::new' => [[], ['_controller' => 'App\\Controller\\IngredientController::new'], [], [['text', '/ingredient/nouveau']], [], [], []],
+    'App\Controller\IngredientController::edit' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/edition']], [], [], []],
+    'App\Controller\IngredientController::delete' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/suppression']], [], [], []],
 ];
