@@ -307,3 +307,11 @@ a91935,::1,POST,https://localhost:8000/ingredient/edition/67,1703546859,,302,req
 667e4e,::1,GET,https://localhost:8000/ingredient,1703546859,,200,request
 93c3bb,::1,GET,https://localhost:8000/ingredient/suppression/11333,1703547162,e15bb7,404,request
 e15bb7,::1,GET,https://localhost:8000/ingredient/suppression/11333,1703547162,,404,request
+d334b7,::1,GET,https://localhost:8000/ingredient/suppression/11333,1703685507,3fd271,404,request
+3fd271,::1,GET,https://localhost:8000/ingredient/suppression/11333,1703685507,,404,request
+1be9bb,::1,GET,https://localhost:8000/ingredient/suppression,1703685510,7d46e5,404,request
+7d46e5,::1,GET,https://localhost:8000/ingredient/suppression,1703685510,,404,request
+19c22f,::1,GET,https://localhost:8000/ingredient,1703685518,,200,request
+509d3b,::1,GET,https://localhost:8000/,1703685525,,200,request
+dd2a54,::1,GET,https://localhost:8000/,1703689036,,200,request
+4d5b3e,::1,GET,https://localhost:8000/,1703689040,,200,request
