@@ -109,6 +109,38 @@ class __TwigTemplate_ab3bff1568fb5108a03917fe388a7656 extends Template
 \t\t\t\t\trecettes</small>
 \t\t\t</div>
 
+\t\t\t";
+            // line 21
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "flashes", [["success", "warning", "danger"]], "method", false, false, false, 21));
+            foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
+                // line 22
+                echo "\t\t\t\t";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable($context["messages"]);
+                foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                    // line 23
+                    echo "\t\t\t\t\t<div class=\"alert alert-";
+                    echo twig_escape_filter($this->env, $context["label"], "html", null, true);
+                    echo "\">
+\t\t\t\t\t\t";
+                    // line 24
+                    echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                    echo "
+\t\t\t\t\t</div>
+\t\t\t\t";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 27
+                echo "\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 28
+            echo "
 \t\t\t<table class=\"table table-primary mt-4\">
 \t\t\t\t<thead>
 \t\t\t\t\t<tr>
@@ -123,47 +155,47 @@ class __TwigTemplate_ab3bff1568fb5108a03917fe388a7656 extends Template
 \t\t\t\t</thead>
 \t\t\t\t<tbody>
 \t\t\t\t\t";
-            // line 34
+            // line 42
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 34, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 42, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["recipe"]) {
-                // line 35
+                // line 43
                 echo "\t\t\t\t\t\t<tr class=\"table-primary\">
 \t\t\t\t\t\t\t<th scope=\"row\">";
-                // line 36
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 36), "html", null, true);
+                // line 44
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 44), "html", null, true);
                 echo "</th>
 \t\t\t\t\t\t\t<td>";
-                // line 37
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "name", [], "any", false, false, false, 37), "html", null, true);
+                // line 45
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "name", [], "any", false, false, false, 45), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 38
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "price", [], "any", false, false, false, 38), "html", null, true);
+                // line 46
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "price", [], "any", false, false, false, 46), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 39
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "difficulty", [], "any", false, false, false, 39), "html", null, true);
+                // line 47
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "difficulty", [], "any", false, false, false, 47), "html", null, true);
                 echo "</td>
 \t\t\t\t\t\t\t<td>";
-                // line 40
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 40), "d/m/Y"), "html", null, true);
+                // line 48
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 48), "d/m/Y"), "html", null, true);
                 echo "
 \t\t\t\t\t\t\t\t(";
-                // line 41
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 41), "H:i:s"), "html", null, true);
+                // line 49
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["recipe"], "createdAt", [], "any", false, false, false, 49), "H:i:s"), "html", null, true);
                 echo ")</td>
 \t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t<a href=\"";
-                // line 43
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ingredient.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 43)]), "html", null, true);
-                echo "\" class=\"btn btn-info\">TODO</a>
+                // line 51
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 51)]), "html", null, true);
+                echo "\" class=\"btn btn-info\">Modifier</a>
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t<td>
 \t\t\t\t\t\t\t\t<a href=\"";
-                // line 46
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ingredient.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 46)]), "html", null, true);
-                echo "\" class=\"btn btn-danger\">TODO</a>
+                // line 54
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe.delete", ["id" => twig_get_attribute($this->env, $this->source, $context["recipe"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+                echo "\" class=\"btn btn-danger\">Supprimer</a>
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t";
@@ -171,25 +203,25 @@ class __TwigTemplate_ab3bff1568fb5108a03917fe388a7656 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['recipe'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 50
+            // line 58
             echo "
 \t\t\t\t</tbody>
 \t\t\t</table>
 
 \t\t\t<div class=\"d-flex justify-content-center mt-4\">
 \t\t\t\t";
-            // line 55
-            echo $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 55, $this->source); })()));
+            // line 63
+            echo $this->env->getRuntime('Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationRuntime')->render($this->env, (isset($context["recipes"]) || array_key_exists("recipes", $context) ? $context["recipes"] : (function () { throw new RuntimeError('Variable "recipes" does not exist.', 63, $this->source); })()));
             echo "
 \t\t\t</div>
 
 \t\t";
         } else {
-            // line 59
+            // line 67
             echo "\t\t\t<h4>Il n'y a pas de recette</h4>
 \t\t";
         }
-        // line 61
+        // line 69
         echo "\t</div>
 
 ";
@@ -222,7 +254,7 @@ class __TwigTemplate_ab3bff1568fb5108a03917fe388a7656 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  193 => 61,  189 => 59,  182 => 55,  175 => 50,  165 => 46,  159 => 43,  154 => 41,  150 => 40,  146 => 39,  142 => 38,  138 => 37,  134 => 36,  131 => 35,  127 => 34,  107 => 17,  100 => 13,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  225 => 69,  221 => 67,  214 => 63,  207 => 58,  197 => 54,  191 => 51,  186 => 49,  182 => 48,  178 => 47,  174 => 46,  170 => 45,  166 => 44,  163 => 43,  159 => 42,  143 => 28,  137 => 27,  128 => 24,  123 => 23,  118 => 22,  114 => 21,  107 => 17,  100 => 13,  95 => 10,  93 => 9,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -247,6 +279,14 @@ class __TwigTemplate_ab3bff1568fb5108a03917fe388a7656 extends Template
 \t\t\t\t\trecettes</small>
 \t\t\t</div>
 
+\t\t\t{% for label, messages in app.flashes(['success', 'warning', 'danger']) %}
+\t\t\t\t{% for message in messages %}
+\t\t\t\t\t<div class=\"alert alert-{{ label }}\">
+\t\t\t\t\t\t{{ message }}
+\t\t\t\t\t</div>
+\t\t\t\t{% endfor %}
+\t\t\t{% endfor %}
+
 \t\t\t<table class=\"table table-primary mt-4\">
 \t\t\t\t<thead>
 \t\t\t\t\t<tr>
@@ -269,10 +309,10 @@ class __TwigTemplate_ab3bff1568fb5108a03917fe388a7656 extends Template
 \t\t\t\t\t\t\t<td>{{ recipe.createdAt | date('d/m/Y') }}
 \t\t\t\t\t\t\t\t({{ recipe.createdAt | date('H:i:s') }})</td>
 \t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('ingredient.edit', { id: recipe.id }) }}\" class=\"btn btn-info\">TODO</a>
+\t\t\t\t\t\t\t\t<a href=\"{{ path('recipe.edit', { id: recipe.id }) }}\" class=\"btn btn-info\">Modifier</a>
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t<a href=\"{{ path('ingredient.delete', { id: recipe.id }) }}\" class=\"btn btn-danger\">TODO</a>
+\t\t\t\t\t\t\t\t<a href=\"{{ path('recipe.delete', { id: recipe.id }) }}\" class=\"btn btn-danger\">Supprimer</a>
 \t\t\t\t\t\t\t</td>
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t{% endfor %}

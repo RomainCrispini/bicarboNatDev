@@ -430,7 +430,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.49RVHAN"/>
+      <argument type="service" id=".service_locator.t5wBfiy"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3386,7 +3386,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.49RVHAN"/>
+      <argument type="service" id=".service_locator.t5wBfiy"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7599,13 +7599,22 @@
         <argument key="repo" type="service_closure" id="App\Repository\RecipeRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.49RVHAN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gA9ZvFz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+        <argument key="recipe" type="service_closure" id=".errored..service_locator.gA9ZvFz.App\Entity\Recipe"/>
+      </argument>
+    </service>
+    <service id=".service_locator.t5wBfiy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\IngredientController::delete" type="service_closure" id=".service_locator.0x2__nR"/>
         <argument key="App\Controller\IngredientController::edit" type="service_closure" id=".service_locator.0x2__nR"/>
         <argument key="App\Controller\IngredientController::index" type="service_closure" id=".service_locator.ZVK9RHj"/>
         <argument key="App\Controller\IngredientController::new" type="service_closure" id=".service_locator.V71r_w4"/>
+        <argument key="App\Controller\RecipeController::delete" type="service_closure" id=".service_locator.gA9ZvFz"/>
+        <argument key="App\Controller\RecipeController::edit" type="service_closure" id=".service_locator.gA9ZvFz"/>
         <argument key="App\Controller\RecipeController::index" type="service_closure" id=".service_locator.ab3oVJK"/>
         <argument key="App\Controller\RecipeController::new" type="service_closure" id=".service_locator.V71r_w4"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -7616,6 +7625,8 @@
         <argument key="App\Controller\IngredientController:edit" type="service_closure" id=".service_locator.0x2__nR"/>
         <argument key="App\Controller\IngredientController:index" type="service_closure" id=".service_locator.ZVK9RHj"/>
         <argument key="App\Controller\IngredientController:new" type="service_closure" id=".service_locator.V71r_w4"/>
+        <argument key="App\Controller\RecipeController:delete" type="service_closure" id=".service_locator.gA9ZvFz"/>
+        <argument key="App\Controller\RecipeController:edit" type="service_closure" id=".service_locator.gA9ZvFz"/>
         <argument key="App\Controller\RecipeController:index" type="service_closure" id=".service_locator.ab3oVJK"/>
         <argument key="App\Controller\RecipeController:new" type="service_closure" id=".service_locator.V71r_w4"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -8612,6 +8623,9 @@
     </service>
     <service id=".errored..service_locator.0x2__nR.App\Entity\Ingredient" class="App\Entity\Ingredient">
       <tag name="container.error" message="Cannot autowire service &quot;.service_locator.0x2__nR&quot;: it needs an instance of &quot;App\Entity\Ingredient&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id=".errored..service_locator.gA9ZvFz.App\Entity\Recipe" class="App\Entity\Recipe">
+      <tag name="container.error" message="Cannot autowire service &quot;.service_locator.gA9ZvFz&quot;: it needs an instance of &quot;App\Entity\Recipe&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id=".console.command.about.lazy" class="Symfony\Component\Console\Command\LazyCommand">
       <argument>about</argument>
@@ -9780,7 +9794,7 @@
     <service id="Knp\Component\Pager\ArgumentAccess\ArgumentAccessInterface" alias="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.49RVHAN"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.t5wBfiy"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9806,7 +9820,8 @@
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
     <service id=".service_locator.ViF0Ejo" alias=".service_locator.ZVK9RHj"/>
     <service id=".service_locator.dj6oCDs" alias=".service_locator.ab3oVJK"/>
-    <service id=".service_locator..IRRdcH" alias=".service_locator.49RVHAN"/>
+    <service id=".service_locator.fJgMEzw" alias=".service_locator.gA9ZvFz"/>
+    <service id=".service_locator.Js44W.B" alias=".service_locator.t5wBfiy"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.PNF1dzw" alias=".service_locator._gJRsFQ"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -9836,6 +9851,7 @@
     <service id=".service_locator.6k5RJBU" alias=".service_locator.V71r_w4"/>
     <service id=".service_locator.zTl7T0M" alias=".service_locator.0x2__nR"/>
     <service id=".service_locator.592HU45" alias=".service_locator.ab3oVJK"/>
+    <service id=".service_locator.IMmcj_z" alias=".service_locator.gA9ZvFz"/>
     <service id=".service_locator.Q1z.f9O" alias=".service_locator.O2p6Lk7"/>
     <service id=".service_locator.dGUCsbe" alias=".service_locator.oR77BOj"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
