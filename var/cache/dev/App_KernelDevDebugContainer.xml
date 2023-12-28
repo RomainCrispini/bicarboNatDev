@@ -379,10 +379,20 @@
         <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\IngredientController"/>
       </call>
     </service>
+    <service id="App\Controller\RecipeController" class="App\Controller\RecipeController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.O2p6Lk7.App\Controller\RecipeController"/>
+      </call>
+    </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
     <service id="App\Form\IngredientType" class="App\Form\IngredientType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RecipeType" class="App\Form\RecipeType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\IngredientRepository" class="App\Repository\IngredientRepository" autowire="true" autoconfigure="true">
@@ -420,7 +430,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator._o8aJQU"/>
+      <argument type="service" id=".service_locator.49RVHAN"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1328,6 +1338,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\IngredientType</argument>
+        <argument>App\Form\RecipeType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -3375,7 +3386,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator._o8aJQU"/>
+      <argument type="service" id=".service_locator.49RVHAN"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -3861,7 +3872,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.rKcWi9."/>
+      <argument type="service" id=".service_locator._gJRsFQ"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -7167,10 +7178,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\IngredientController" class="App\Controller\IngredientController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\IngredientController" class="App\Controller\IngredientController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\IngredientController" class="App\Controller\IngredientController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RecipeController" class="App\Controller\RecipeController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RecipeController" class="App\Controller\RecipeController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\RecipeController" class="App\Controller\RecipeController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\IngredientType" class="App\Form\IngredientType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\IngredientType" class="App\Form\IngredientType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RecipeType" class="App\Form\RecipeType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RecipeType" class="App\Form\RecipeType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\IngredientRepository" class="App\Repository\IngredientRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\IngredientRepository" class="App\Repository\IngredientRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\RecipeRepository" class="App\Repository\RecipeRepository" autowire="true" abstract="true"/>
@@ -7576,13 +7592,22 @@
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator._o8aJQU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.ab3oVJK" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="paginator" type="service_closure" id="knp_paginator"/>
+        <argument key="repo" type="service_closure" id="App\Repository\RecipeRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.49RVHAN" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\IngredientController::delete" type="service_closure" id=".service_locator.0x2__nR"/>
         <argument key="App\Controller\IngredientController::edit" type="service_closure" id=".service_locator.0x2__nR"/>
         <argument key="App\Controller\IngredientController::index" type="service_closure" id=".service_locator.ZVK9RHj"/>
         <argument key="App\Controller\IngredientController::new" type="service_closure" id=".service_locator.V71r_w4"/>
+        <argument key="App\Controller\RecipeController::index" type="service_closure" id=".service_locator.ab3oVJK"/>
+        <argument key="App\Controller\RecipeController::new" type="service_closure" id=".service_locator.V71r_w4"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
@@ -7591,6 +7616,8 @@
         <argument key="App\Controller\IngredientController:edit" type="service_closure" id=".service_locator.0x2__nR"/>
         <argument key="App\Controller\IngredientController:index" type="service_closure" id=".service_locator.ZVK9RHj"/>
         <argument key="App\Controller\IngredientController:new" type="service_closure" id=".service_locator.V71r_w4"/>
+        <argument key="App\Controller\RecipeController:index" type="service_closure" id=".service_locator.ab3oVJK"/>
+        <argument key="App\Controller\RecipeController:new" type="service_closure" id=".service_locator.V71r_w4"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
       </argument>
@@ -7752,10 +7779,11 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.rKcWi9." class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator._gJRsFQ" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\IngredientType" type="service_closure" id="App\Form\IngredientType"/>
+        <argument key="App\Form\RecipeType" type="service_closure" id="App\Form\RecipeType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service_closure" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ColorType" type="service_closure" id="form.type.color"/>
@@ -8206,6 +8234,12 @@
     <service id=".service_locator.O2p6Lk7.App\Controller\IngredientController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\IngredientController"/>
       <argument>App\Controller\IngredientController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.O2p6Lk7" method="withContext"/>
+    </service>
+    <service id=".service_locator.O2p6Lk7.App\Controller\RecipeController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\RecipeController"/>
+      <argument>App\Controller\RecipeController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.O2p6Lk7" method="withContext"/>
     </service>
@@ -9746,7 +9780,7 @@
     <service id="Knp\Component\Pager\ArgumentAccess\ArgumentAccessInterface" alias="Knp\Component\Pager\ArgumentAccess\RequestArgumentAccess"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._o8aJQU"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.49RVHAN"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9771,9 +9805,10 @@
     <service id=".service_locator.h8Jkkd2" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
     <service id=".service_locator.ViF0Ejo" alias=".service_locator.ZVK9RHj"/>
-    <service id=".service_locator.lbJtVE3" alias=".service_locator._o8aJQU"/>
+    <service id=".service_locator.dj6oCDs" alias=".service_locator.ab3oVJK"/>
+    <service id=".service_locator..IRRdcH" alias=".service_locator.49RVHAN"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
-    <service id=".service_locator.iVn48KX" alias=".service_locator.rKcWi9."/>
+    <service id=".service_locator.PNF1dzw" alias=".service_locator._gJRsFQ"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.jUv.zyj" alias=".service_locator.O2p6Lk7"/>
@@ -9800,6 +9835,7 @@
     <service id=".service_locator.kaJ_WrD" alias=".service_locator.ZVK9RHj"/>
     <service id=".service_locator.6k5RJBU" alias=".service_locator.V71r_w4"/>
     <service id=".service_locator.zTl7T0M" alias=".service_locator.0x2__nR"/>
+    <service id=".service_locator.592HU45" alias=".service_locator.ab3oVJK"/>
     <service id=".service_locator.Q1z.f9O" alias=".service_locator.O2p6Lk7"/>
     <service id=".service_locator.dGUCsbe" alias=".service_locator.oR77BOj"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>

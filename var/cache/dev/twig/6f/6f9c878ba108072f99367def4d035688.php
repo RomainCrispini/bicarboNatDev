@@ -57,7 +57,15 @@ class __TwigTemplate_c10fc3b98a1beccea9c2ee5e993eb3d6 extends Template
 \t\t\t\t\t<a class=\"nav-link active\" href=\"";
         // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ingredient.index");
-        echo "\">Ingrédients
+        echo "\">Mes ingrédients
+\t\t\t\t\t\t<span class=\"visually-hidden\">(current)</span>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link active\" href=\"";
+        // line 20
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recipe.index");
+        echo "\">Mes recettes
 \t\t\t\t\t\t<span class=\"visually-hidden\">(current)</span>
 \t\t\t\t\t</a>
 \t\t\t\t</li>
@@ -99,7 +107,7 @@ class __TwigTemplate_c10fc3b98a1beccea9c2ee5e993eb3d6 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  59 => 15,  43 => 1,);
+        return array (  67 => 20,  59 => 15,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -118,7 +126,12 @@ class __TwigTemplate_c10fc3b98a1beccea9c2ee5e993eb3d6 extends Template
 \t\t\t\t\t</a>
 \t\t\t\t</li>
 \t\t\t\t<li class=\"nav-item\">
-\t\t\t\t\t<a class=\"nav-link active\" href=\"{{ path('ingredient.index') }}\">Ingrédients
+\t\t\t\t\t<a class=\"nav-link active\" href=\"{{ path('ingredient.index') }}\">Mes ingrédients
+\t\t\t\t\t\t<span class=\"visually-hidden\">(current)</span>
+\t\t\t\t\t</a>
+\t\t\t\t</li>
+\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t<a class=\"nav-link active\" href=\"{{ path('recipe.index') }}\">Mes recettes
 \t\t\t\t\t\t<span class=\"visually-hidden\">(current)</span>
 \t\t\t\t\t</a>
 \t\t\t\t</li>

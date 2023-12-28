@@ -22,9 +22,13 @@ return [
     'ingredient.new' => [[], ['_controller' => 'App\\Controller\\IngredientController::new'], [], [['text', '/ingredient/nouveau']], [], [], []],
     'ingredient.edit' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/edition']], [], [], []],
     'ingredient.delete' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/suppression']], [], [], []],
+    'recipe.index' => [[], ['_controller' => 'App\\Controller\\RecipeController::index'], [], [['text', '/recette']], [], [], []],
+    'recipe.create' => [[], ['_controller' => 'App\\Controller\\RecipeController::new'], [], [['text', '/recette/creation']], [], [], []],
     'App\Controller\HomeController::index' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'App\Controller\IngredientController::index' => [[], ['_controller' => 'App\\Controller\\IngredientController::index'], [], [['text', '/ingredient']], [], [], []],
     'App\Controller\IngredientController::new' => [[], ['_controller' => 'App\\Controller\\IngredientController::new'], [], [['text', '/ingredient/nouveau']], [], [], []],
     'App\Controller\IngredientController::edit' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/edition']], [], [], []],
     'App\Controller\IngredientController::delete' => [['id'], ['_controller' => 'App\\Controller\\IngredientController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/ingredient/suppression']], [], [], []],
+    'App\Controller\RecipeController::index' => [[], ['_controller' => 'App\\Controller\\RecipeController::index'], [], [['text', '/recette']], [], [], []],
+    'App\Controller\RecipeController::new' => [[], ['_controller' => 'App\\Controller\\RecipeController::new'], [], [['text', '/recette/creation']], [], [], []],
 ];

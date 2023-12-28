@@ -213,7 +213,7 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
 \t\t";
         } else {
             // line 65
-            echo "\t\t\t<h4>Il n'y a pas d'ingrédients</h4>
+            echo "\t\t\t<h4>Il n'y a pas d'ingrédient</h4>
 \t\t";
         }
         // line 67
@@ -318,7 +318,7 @@ class __TwigTemplate_4f9b92ab44dffba01644373df6fc0d48 extends Template
 \t\t\t</div>
 
 \t\t{% else %}
-\t\t\t<h4>Il n'y a pas d'ingrédients</h4>
+\t\t\t<h4>Il n'y a pas d'ingrédient</h4>
 \t\t{% endif %}
 \t</div>
 
